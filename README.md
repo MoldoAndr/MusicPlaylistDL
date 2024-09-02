@@ -16,6 +16,4 @@ A simple web application built with Flask that allows users to download audio fr
 - `FFmpeg` (for audio extraction)
 
 - ## Usage
-- pip install -r requirements.txt
-- python3 app.py
-- go to localhost:5000
+-  pyinstaller --onefile .\app.py 
