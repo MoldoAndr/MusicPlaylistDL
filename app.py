@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template_string
 import os
 import yt_dlp
+import webbrowser
 
 app = Flask(__name__)
 
@@ -208,4 +209,8 @@ def index():
     ''')
 
 if __name__ == '__main__':
+    brave_path = "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"  # Modify if needed
+    webbrowser.register('brave', None, webbrowser.BackgroundBrowser(brave_path))
+    webbrowser.get('brave').open("http://localhost:5000")
+
     app.run(debug=False)
