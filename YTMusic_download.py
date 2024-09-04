@@ -22,7 +22,7 @@ def download_playlist(playlist_url, output_dir):
         'verbose': True,
         'playliststart': 1,
         'playlistend': None,
-        'noplaylist': False,  # Ensure we are processing playlists
+        'noplaylist': False,
         'progress_hooks': [download_progress_hook]
     }
 
@@ -43,7 +43,6 @@ def download_progress_hook(d):
             'eta': d['_eta_str']
         })
     elif d['status'] == 'finished':
-        # Notify that the download is finished
         socketio.emit('download_complete')
 
 @app.route('/', methods=['GET', 'POST'])
